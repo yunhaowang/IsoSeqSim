@@ -1,5 +1,4 @@
 # IsoSeqSim
-<<<<<<< HEAD
 Time-stamp: <2017-10-09 Yunhao Wang, Email: yunhaowang@126.com>
 
 
@@ -13,8 +12,10 @@ Full-length isoform sequencing (Iso-Seq) technology originally developed by Paci
 - Linux system
 
 - python 2.7
--- Numpy (tested with version 1.9.3)
--- Scipy (tested with version 0.17.0)
+
+- Numpy (tested with version 1.9.3)
+
+- Scipy (tested with version 0.17.0)
 
 
 ## Install and Run
@@ -66,36 +67,52 @@ See format of modified GenePred table file for different modes:
 
 2.1 "normal" and "apa" modes
 
-Tab-split
+Tab-split (12 columns)
 
 (1) gene ID
+
 (2) isoform ID
+
 (3) chromosome ID
+
 (4) strand: "+/plus" or "-/minus"
+
 (5) transcription start site (TSS) for plus strand-derived isoform, while transcription terminal site (TTS) for minus strand-derived isoform
+
 (6) TTS for plus strand-derived isoform, while TSS for minus strand-derived isoform
+
 (7) .
+
 (8) .
+
 (9) number of exons
+
 (10) exon start positions
+
 (11) exon end positions
+
 (12) simulated read count
 
 2.2 "fusion" mode
 
-Tab-split
+Tab-split (23 columns)
 
 (1-11) gpd for upstream isoform of fusion transcript
+
 (12-22) gpd for downstream isoform of fusion transcript
+
 (23) simulated read count
 
 2.3 "ase" mode
 
-Tab-split
+Tab-split (14 columns)
 
 (1-11) gpd for upstream isoform of fusion transcript
+
 (12) simulated total read count
+
 (13) simulated allele1-specific read count
+
 (14) simulated allele2-specific read count
 
 
@@ -123,24 +140,27 @@ Tab-split
 For PacBio Iso-Seq data, first extract ROI (reads of insert) with the full pass >= 0 and the accuracy >=0.7; then do alignment using GMAP aligner; last calculate the error rate and error pattern using AlignQC software
 
 1. PacBio Sequel (Data: our own unpublished Iso-Seq data generated in 2017, 4 Sequel SMRT cells)
+
 (1) Substitution (mismatch) 1.731%; (2) Deletion 1.090%; (3) Insertion 2.204%
 
 2. PacBio RS II with P6-C4 chemistry (Data: Alzheimer's disease brain Iso-Seq data released by PacBio in 2016, 40 SMRT cells)
+
 (1) Substitution (mismatch) 1.167%; (2) Deletion 1.723%; (3) Insertion 1.403%
 
 3. PacBio RS II with P5-C3 chemistry (Data: MCF-7 Iso-Seq data released by PacBio in 2015, 28 SMRT cells)
+
 (1) Substitution (mismatch) 2.575%; (2) Deletion 1.369%; (3) Insertion 4.530%
 
 4. PacBio RS II with P4-C2 chemistry (Data: MCF-7 Iso-Seq data released by PacBio in 2013, 119 SMRT cells)
+
 (1) Substitution (mismatch) 0.728%; (2) Deletion 1.125%; (3) Insertion 1.189%
 
 For ONT RNA-Seq data, first download data from a published study (Byrne, A. Nature Communications 2017); then do alignment using GMAP aligner; last calculate the error rate and error pattern using AlignQC software
 
 5. ONT MinION with R7.3 chemistry (2D reads)
+
 (1) Substitution (mismatch) 5.391%; (2) Deletion 5.555%; (3) Insertion 2.324%
 
 6. ONT MinION with R9.4 chemistry (2D reads)
+
 (1) Substitution (mismatch) 2.390%; (2) Deletion 5.355%; (3) Insertion 0.884%
-=======
-Iso-Seq reads simulator for PacBio and ONT full-length isoform sequencing tehcnologies
->>>>>>> 43a3b30f2ab3a3ca867c0cde2332d9bf2c891aa5
