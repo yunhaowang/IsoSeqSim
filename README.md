@@ -44,19 +44,19 @@ Note: considering gene duplication, wherein multiple genic loci (from same/diffe
 
 See the naming rule of simulated reads for different modes:
 
-1.1 "normal" mode
+- 1.1 "normal" mode
 
 '>read_ID isoform_ID'. Space-split
 
-1.2 "fusion" mode 
+- 1.2 "fusion" mode 
 
 '>read_ID Isoform1+fusionSiteInIsoform1+Isoform2+fusionSiteInIsoform2'. Space-split
 
-1.3 "apa" mode
+- 1.3 "apa" mode
 
 '>read_ID isoform_ID+polyA_site'. Space-split
 
-1.4 "ase" mode
+- 1.4 "ase" mode
 
 '>read_ID isoform_ID allele_ID'. Space-split
 
@@ -65,7 +65,7 @@ See the naming rule of simulated reads for different modes:
 
 See format of modified GenePred table file for different modes:
 
-2.1 "normal" and "apa" modes
+- 2.1 "normal" and "apa" modes
 
 Tab-split (12 columns)
 
@@ -93,7 +93,7 @@ Tab-split (12 columns)
 
 (12) simulated read count
 
-2.2 "fusion" mode
+- 2.2 "fusion" mode
 
 Tab-split (23 columns)
 
@@ -103,7 +103,7 @@ Tab-split (23 columns)
 
 (23) simulated read count
 
-2.3 "ase" mode
+- 2.3 "ase" mode
 
 Tab-split (14 columns)
 
