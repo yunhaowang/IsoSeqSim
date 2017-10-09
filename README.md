@@ -139,28 +139,28 @@ Tab-split (14 columns)
 
 For PacBio Iso-Seq data, first extract ROI (reads of insert) with the full pass >= 0 and the accuracy >=0.7; then do alignment using GMAP aligner; last calculate the error rate and error pattern using AlignQC software
 
-1. PacBio Sequel (Data: our own unpublished Iso-Seq data generated in 2017, 4 Sequel SMRT cells)
+- 1. PacBio Sequel (Data: our own unpublished Iso-Seq data generated in 2017, 4 Sequel SMRT cells)
 
 (1) Substitution (mismatch) 1.731%; (2) Deletion 1.090%; (3) Insertion 2.204%
 
-2. PacBio RS II with P6-C4 chemistry (Data: Alzheimer's disease brain Iso-Seq data released by PacBio in 2016, 40 SMRT cells)
+- 2. PacBio RS II with P6-C4 chemistry (Data: Alzheimer's disease brain Iso-Seq data released by PacBio in 2016, 40 SMRT cells)
 
 (1) Substitution (mismatch) 1.167%; (2) Deletion 1.723%; (3) Insertion 1.403%
 
-3. PacBio RS II with P5-C3 chemistry (Data: MCF-7 Iso-Seq data released by PacBio in 2015, 28 SMRT cells)
+- 3. PacBio RS II with P5-C3 chemistry (Data: MCF-7 Iso-Seq data released by PacBio in 2015, 28 SMRT cells)
 
 (1) Substitution (mismatch) 2.575%; (2) Deletion 1.369%; (3) Insertion 4.530%
 
-4. PacBio RS II with P4-C2 chemistry (Data: MCF-7 Iso-Seq data released by PacBio in 2013, 119 SMRT cells)
+- 4. PacBio RS II with P4-C2 chemistry (Data: MCF-7 Iso-Seq data released by PacBio in 2013, 119 SMRT cells)
 
 (1) Substitution (mismatch) 0.728%; (2) Deletion 1.125%; (3) Insertion 1.189%
 
 For ONT RNA-Seq data, first download data from a published study (Byrne, A. Nature Communications 2017); then do alignment using GMAP aligner; last calculate the error rate and error pattern using AlignQC software
 
-5. ONT MinION with R7.3 chemistry (2D reads)
+- 5. ONT MinION with R7.3 chemistry (2D reads)
 
 (1) Substitution (mismatch) 5.391%; (2) Deletion 5.555%; (3) Insertion 2.324%
 
-6. ONT MinION with R9.4 chemistry (2D reads)
+- 6. ONT MinION with R9.4 chemistry (2D reads)
 
 (1) Substitution (mismatch) 2.390%; (2) Deletion 5.355%; (3) Insertion 0.884%
