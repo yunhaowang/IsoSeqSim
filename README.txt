@@ -70,7 +70,7 @@ See format of modified GenePred table file for different modes:
 
 2.1 "normal" and "apa" modes
 
-Tab-split
+Tab-split (12 columns)
 
 (1) gene ID
 (2) isoform ID
@@ -87,7 +87,7 @@ Tab-split
 
 2.2 "fusion" mode
 
-Tab-split
+Tab-split (23 columns)
 
 (1-11) gpd for upstream isoform of fusion transcript
 (12-22) gpd for downstream isoform of fusion transcript
@@ -95,7 +95,7 @@ Tab-split
 
 2.3 "ase" mode
 
-Tab-split
+Tab-split (14 columns)
 
 (1-11) gpd for upstream isoform of fusion transcript
 (12) simulated total read count
