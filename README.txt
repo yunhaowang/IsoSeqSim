@@ -132,13 +132,13 @@ For PacBio Iso-Seq data, first extract ROI (reads of insert) with the full pass 
 (1) Substitution (mismatch) 1.731%; (2) Deletion 1.090%; (3) Insertion 2.204%
 
 2. PacBio RS II with P6-C4 chemistry (Data: Alzheimer's disease brain Iso-Seq data released by PacBio in 2016, 40 SMRT cells)
-(1) Substitution (mismatch) 1.167%; (2) Deletion 1.723%; (3) Insertion 1.403%
+(1) Substitution (mismatch) 2.626%; (2) Deletion 2.156%; (3) Insertion 3.550%
 
 3. PacBio RS II with P5-C3 chemistry (Data: MCF-7 Iso-Seq data released by PacBio in 2015, 28 SMRT cells)
-(1) Substitution (mismatch) 2.575%; (2) Deletion 1.369%; (3) Insertion 4.530%
+(1) Substitution (mismatch) 3.266%; (2) Deletion 1.618%; (3) Insertion 5.506%
 
 4. PacBio RS II with P4-C2 chemistry (Data: MCF-7 Iso-Seq data released by PacBio in 2013, 119 SMRT cells)
-(1) Substitution (mismatch) 0.728%; (2) Deletion 1.125%; (3) Insertion 1.189%
+(1) Substitution (mismatch) 2.677%; (2) Deletion 1.787%; (3) Insertion 3.971%
 
 For ONT RNA-Seq data, first download data from a published study (Byrne, A. Nature Communications 2017); then do alignment using GMAP aligner; last calculate the error rate and error pattern using AlignQC software
 
