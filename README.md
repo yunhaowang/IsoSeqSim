@@ -1,10 +1,10 @@
-# IsoSeqSim
+# IsoSeqSim (version 0.2)
 Time-stamp: <2017-10-09 Yunhao Wang, Email: yunhaowang@126.com>
 
 
 ## Introduction
 
-Full-length isoform sequencing (Iso-Seq) technology originally developed by Pacific Biosciences (PacBio) has been widely applied to transcriptome study. In 2014, Oxford Nanopore Technologies (ONT) released its first sequencing platform, MinION, that has been also used to sequence full-length isoforms. IsoSeqSim is an Iso-Seq reads simulator for evaluating the performance of Iso-Seq bioinformatics analysis tools. IsoSeqSim has four modes: 1) "normal" for isoform construction and quantification analysis; 2) "fusion" for gene fusion analysis; 3) "apa" for alternative cleavage and polyadenylation (APA) analysis; and 4) "ase" for allele-specific expression (ASE) analysis.
+Full-length isoform sequencing (Iso-Seq) technology originally developed by Pacific Biosciences (PacBio) has been widely applied to transcriptome study. In 2014, Oxford Nanopore Technologies (ONT) released its first sequencing platform, MinION, that has been also used to sequence full-length isoforms. IsoSeqSim is an Iso-Seq reads simulator for evaluating the performance of Iso-Seq bioinformatics analysis tools. IsoSeqSim has five modes: 1) "normal" for isoform construction and quantification analysis; 2) "fusion" for gene fusion analysis; 3) "apa" for alternative cleavage and polyadenylation (APA) analysis; 4) "ats" for alternative transcriptional start site (ATS) analysis; and 5) "ase" for allele-specific expression (ASE) analysis.
 
 
 ## Prerequisite
@@ -20,11 +20,11 @@ Full-length isoform sequencing (Iso-Seq) technology originally developed by Paci
 
 ## Install and Run
 
-1. Download the package (e.g., `IsoSeqSim-0.1.tar.gz`) to a directory (e.g., `/home/`)
+1. Download the package (e.g., `IsoSeqSim-0.2.tar.gz`) to a directory (e.g., `/home/`)
 
-2. Unpack it using the command `tar -zxvf /home/IsoSeqSim-0.1.tar.gz`
+2. Unpack it using the command `tar -zxvf /home/IsoSeqSim-0.2.tar.gz`
 
-3. Now, you can run IsoSeqSim by the executable file `/home/IsoSeqSim-0.1/bin/isoseqsim`. Optional, you can add IsoSeqSim into your PATH so that you can run IsoSeqSim without having to specify the entire path. For example, you can add one line `export PATH=/home/IDPAPA-0.1/bin:$PATH` to your `~/.bashrc`.
+3. Now, you can run IsoSeqSim by the executable file `/home/IsoSeqSim-0.2/bin/isoseqsim`. Optional, you can add IsoSeqSim into your PATH so that you can run IsoSeqSim without having to specify the entire path. For example, you can add one line `export PATH=/home/IsoSeqSim-0.2/bin:$PATH` to your `~/.bashrc`.
 
 
 ## Input
@@ -56,7 +56,11 @@ See the naming rule of simulated reads for different modes:
 
 '>read_ID isoform_ID+polyA_site'. Space-split
 
-- 1.4 "ase" mode
+- 1.4 "ats" mode
+
+'>read_ID isoform_ID+TSS'. Space-split
+
+- 1.5 "ase" mode
 
 '>read_ID isoform_ID allele_ID'. Space-split
 
@@ -65,7 +69,7 @@ See the naming rule of simulated reads for different modes:
 
 See format of modified GenePred table file for different modes:
 
-- 2.1 "normal" and "apa" modes
+- 2.1 "normal", "apa" and "ats" modes
 
 Tab-split (12 columns)
 
@@ -120,19 +124,23 @@ Tab-split (14 columns)
 
 1. "normal" mode
 
-`./bin/isoseqsim -g example/genome.fasta -a example/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o simulated_reads_normal.fa -t simulated_transcipt_normal.gpd --tempdir temp_normal`
+`./bin/isoseqsim -g example/input/genome.fasta -a example/input/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o example/simulated_reads_normal.fa -t example/simulated_transcipt_normal.gpd --tempdir example/temp_normal`
 
 2. "fusion" mode
 
-`./bin/isoseqsim -g example/genome.fasta -a example/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o simulated_reads_fusion.fa -t simulated_transcipt_fusion.gpd --tempdir temp_fusion -m fusion --fc 20`
+`./bin/isoseqsim -g example/input/genome.fasta -a example/input/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o example/simulated_reads_fusion.fa -t example/simulated_transcipt_fusion.gpd --tempdir example/temp_fusion -m fusion --fc 20`
 
 3. "apa" mode
 
-`./bin/isoseqsim -g example/genome.fasta -a example/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o simulated_reads_apa.fa -t simulated_transcipt_apa.gpd --tempdir temp_apa -m apa --dis 50`
+`./bin/isoseqsim -g example/input/genome.fasta -a example/input/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o example/simulated_reads_apa.fa -t example/simulated_transcipt_apa.gpd --tempdir example/temp_apa -m apa --dis 50`
 
-4. "ase" mode
+4. "ats" mode
 
-`./bin/isoseqsim -g example/genome.fasta -a example/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o simulated_reads_ase.fa -t simulated_transcipt_ase.gpd --tempdir temp_ase -m ase --vcf example/genotype.vcf --id SIRV`
+`./bin/isoseqsim -g example/input/genome.fasta -a example/input/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o example/simulated_reads_ats.fa -t example/simulated_transcipt_ats.gpd --tempdir example/temp_ats -m ats --dis 50`
+
+5. "ase" mode
+
+`./bin/isoseqsim -g example/input/genome.fasta -a example/input/gene_annotation.gtf --c5 utilities/5_end_completeness.PacBio-P6-C4.tab --c3 utilities/3_end_completeness.PacBio-P6-C4.tab -o example/simulated_reads_ase.fa -t example/simulated_transcipt_ase.gpd --tempdir example/temp_ase -m ase --vcf example/input/genotype.vcf --id SIRV`
 
 
 ## Error Rate
